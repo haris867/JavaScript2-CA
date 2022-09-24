@@ -1,0 +1,156 @@
+$focus-color: #fcb235;
+
+.letter-container {
+  color: white;
+  margin-left: 10px;
+  padding-bottom: 10px;
+  max-height: 145px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.animation {
+  position: relative;
+  animation-duration: 3s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+
+.o {
+  font-size: 8em;
+  margin-top: -16px;
+  position: relative;
+  bottom: 2px;
+  z-index: 10;
+  max-height: 145px;
+}
+
+.o:hover {
+  animation-name: o-hover;
+  animation-delay: 1s;
+  animation-duration: 2s;
+  color: $focus-color;
+}
+
+.h {
+  font-size: 6.36em;
+  animation-name: h-move;
+  right: 0px;
+}
+
+.a1 {
+  font-size: 6.25em;
+  animation-name: a1-dissapear;
+}
+
+.a2 {
+  font-size: 6.25em;
+  animation-name: a2-dissapear;
+}
+
+.n {
+  font-size: 6.3em;
+  animation-name: n-move;
+  right: 0px;
+}
+
+@keyframes o-hover {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+    color: white;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes h-move {
+  0% {
+    right: 0px;
+  }
+
+  95% {
+    right: 80px;
+  }
+
+  100% {
+    right: 79px;
+  }
+}
+
+@keyframes n-move {
+  0% {
+    right: 0px;
+  }
+
+  100% {
+    right: 202px;
+  }
+}
+
+@keyframes a1-dissapear {
+  0% {
+    opacity: 100%;
+    right: 0px;
+    transform: rotate(0deg);
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  70% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    right: 120px;
+    opacity: 0;
+  }
+}
+
+@keyframes a2-dissapear {
+  0% {
+    opacity: 100%;
+    right: 0px;
+    transform: rotate(0deg);
+  }
+
+  7% {
+  }
+
+  20% {
+    font-size: 6em;
+    top: -1.6px;
+  }
+
+  40% {
+    top: -5px;
+  }
+
+  50% {
+    top: -10px;
+    opacity: 0;
+  }
+
+  70% {
+    transform: rotate(180deg);
+    top: -10px;
+    right: 215px;
+  }
+
+  75% {
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
