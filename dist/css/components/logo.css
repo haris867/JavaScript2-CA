@@ -27,10 +27,7 @@ a {
 }
 
 .o:hover {
-  animation-name: o-hover;
-  animation-delay: 1s;
-  animation-duration: 2s;
-  color: #fcb235;
+  color: white;
 }
 
 .h {
@@ -55,18 +52,6 @@ a {
   right: 0px;
 }
 
-@keyframes o-hover {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-    color: white;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 @keyframes h-move {
   0% {
     right: 0px;
