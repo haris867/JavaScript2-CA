@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OHANA | Sign up</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="letter-container d-flex">
+        <a href="login.html">
+          <div class="o">O</div>
+        </a>
+        <div class="animation h">H</div>
+        <div class="animation a1">A</div>
+        <div class="animation n">N</div>
+        <div class="animation a2">A</div>
+      </div>
+    </header>
+    <main class="form-signin w-100 m-auto">
+      <form class="form" id="form" action="/profile">
+        <div class="form-floating">
+          <input
+            required
+            pattern="^[\w]+$"
+            type="text"
+            class="form-control form-inputs"
+            id="username"
+            placeholder="Ola Nordmann"
+            title="Username must only contain lettes, numbers and underscore(_). Example: UserName_123"
+          />
+          <label class="form-label" for="username">Name</label>
+        </div>
+        <div class="form-floating">
+          <input
+            required
+            pattern="^[\w\-.]+@(stud.)?noroff.no$"
+            type="email"
+            class="form-control form-inputs"
+            id="email"
+            placeholder="name@example.com"
+            title="Only @(stud.)noroff.no domains are allowed to register a user profile"
+          />
+          <label class="form-label" for="email">Email address</label>
+        </div>
+        <div class="form-floating">
+          <input
+            required
+            type="password"
+            class="form-control form-inputs"
+            id="password"
+            placeholder="Password"
+            minlength="8"
+          />
+          <label for="password">Password</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control form-inputs"
+            id="avatar"
+            placeholder="Avatar"
+          />
+          <label for="avatar">Avatar (optional)</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control form-inputs"
+            id="banner"
+            placeholder="Banner"
+          />
+          <label for="banner">Banner (optional)</label>
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary form-button" type="submit">
+          Sign up
+        </button>
+        <div class="register-link d-flex justify-content-center">
+          <a href="login.html">Already registered? Log in here!</a>
+        </div>
+      </form>
+    </main>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/signup.mjs" type="module"></script>
+  </body>
+</html>
