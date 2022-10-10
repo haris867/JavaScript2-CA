@@ -27,9 +27,14 @@ export const postsContainer = document.querySelector(".post-container");
  * Fetches and displays filtered posts from the API
  */
 async function getPosts() {
-  // if (token !== getToken) {
-  //   window.location = "login.html";
+  // function checkCredentials() {
+  //   const checkToken = localStorage.getItem("token");
+  //   if (!checkToken) {
+  //     window.location = "login.html";
+  //   }
   // }
+
+  // checkCredentials();
   //get posts
   const response = await fetch(url, options);
   const profiles = await response.json();

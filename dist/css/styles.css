@@ -333,4 +333,8 @@ h4 {
   color: #1b1c1e;
 }
 
+.placeholder {
+  min-width: 60px;
+}
+
 /*# sourceMappingURL=styles.css.map */
