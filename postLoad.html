@@ -14,7 +14,7 @@
   <body>
     <header class="d-flex">
       <div class="letter-container d-flex">
-        <a href="login.html">
+        <a href="index.html">
           <div class="o">O</div>
         </a>
         <div class="animation h">H</div>
@@ -29,9 +29,9 @@
         </svg>
       </div>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item current" href="login.html">Home</a></li>
+          <li><a class="dropdown-item current" href="index.html">Home</a></li>
           <li><a id="profile-button" class="dropdown-item" href="">Profile</a></li>
-          <li><a class="dropdown-item signout-button" href="login.html">Sign out</a></li>
+          <li><a class="dropdown-item signout-button" href="index.html">Sign out</a></li>
         </ul>
       </div>
     </header>
@@ -47,16 +47,16 @@
                 <div class="author d-flex align-items-center justify-content-between my-2">
                 <a href="profile.html?name=${name}" class="text-decoration-none">
                   <div class="d-flex">
-                      <div class="rounded-circle">
+                      <div class="rounded-circle placeholder">
                         <img
-                          class="rounded-circle post-avatar"
+                          class="rounded-circle post-avatar placeholder"
                           src="..."
                           alt=""
                         />
                       </div>
                       <div class="name ms-2 mt-1">
                         <h3 class="placeholder-glow">
-                        <span class="placeholder col-4"></span>
+                        <span class="placeholder col-6 placeholder-name"></span>
                         </h3>
                       </div>
                     </div>
@@ -141,17 +141,23 @@
               <!--  -->
 
                 <div class="card image-div">
-                  <img
+                  <!-- <img
                     src="..."
                     class="card-img-top placeholder row-6 col-5"
                     alt=""
-                  />
+                  /> -->
+                  <div class="placeholder-glow d-flex justify-content-center">
+                    <div class="placeholder placeholder-image col-6 m-3"></div>
+                  </div>
                   <div class="card-body">
                     <h3 class="placeholder-glow">
-                        <span class="placeholder col-5"></span>
+                        <span class="placeholder col-4"></span>
                     </h3>
                     <p class="card-text placeholder-glow">
+                      <span class="placeholder col-6"></span>
+                      <span class="placeholder col-3"></span>
                       <span class="placeholder col-5"></span>
+                      <span class="placeholder col-3"></span>
                     </p>
                   </div>
                 </div>

@@ -8,5 +8,5 @@ signoutButton.addEventListener("click", logOut);
 function logOut() {
   localStorage.removeItem("token");
   localStorage.removeItem("name");
-  window.location = "login.html";
+  window.location = "index.html";
 }

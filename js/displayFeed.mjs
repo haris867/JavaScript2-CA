@@ -30,7 +30,7 @@ async function getPosts() {
   // function checkCredentials() {
   //   const checkToken = localStorage.getItem("token");
   //   if (!checkToken) {
-  //     window.location = "login.html";
+  //     window.location = "index.html";
   //   }
   // }
 

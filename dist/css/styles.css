@@ -336,5 +336,12 @@ h4 {
 .placeholder {
   min-width: 60px;
 }
+.placeholder-image {
+  width: 500px;
+  height: 500px;
+}
+.placeholder-name {
+  min-width: 90px;
+}
 
 /*# sourceMappingURL=styles.css.map */

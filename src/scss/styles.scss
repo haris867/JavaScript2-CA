@@ -238,4 +238,11 @@ h4 {
 
 .placeholder {
   min-width: 60px;
+  &-image {
+    width: 500px;
+    height: 500px;
+  }
+  &-name {
+    min-width: 90px;
+  }
 }

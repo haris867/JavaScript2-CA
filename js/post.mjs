@@ -13,7 +13,7 @@ function getToken() {
   const accessToken = localStorage.getItem("token");
   if (accessToken === null) {
     return [];
-    // window.location = "login.html";
+    // window.location = "index.html";
   } else {
     return JSON.parse(accessToken);
   }
@@ -34,7 +34,7 @@ const postContainer = document.querySelector(".post-container");
  */
 async function getPost() {
   // if (token !== getToken) {
-  //   window.location = "login.html";
+  //   window.location = "index.html";
   // }
   //get posts
   const response = await fetch(url, options);

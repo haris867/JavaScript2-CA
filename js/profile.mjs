@@ -21,8 +21,6 @@ function getToken() {
 
 const token = getToken();
 
-console.log(token);
-
 const options = {
   headers: {
     Authorization: `Bearer ${token}`,

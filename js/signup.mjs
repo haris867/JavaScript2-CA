@@ -15,21 +15,31 @@ form.addEventListener("submit", registerProfile);
  */
 async function registerProfile(event) {
   event.preventDefault();
-  const data = JSON.stringify({
+  const data = {
     name: username.value,
     email: email.value,
     password: password.value,
     avatar: avatar.value,
     banner: banner.value,
-  });
+  };
+
+  if (avatar === "") {
+    avatar =
+      "https://user-images.githubusercontent.com/73777398/195344626-79fbd38b-bd65-476a-a576-36f83fc1305d.png";
+  }
+
+  if ((banner = "")) {
+    delete data.banner;
+  }
 
   const register = await fetch(url, {
     method: "post",
     headers: {
       "Content-Type": "application/json",
     },
-    body: data,
+    body: JSON.stringify(data),
   });
   console.log(register);
   form.reset();
+  window.location = "index.html";
 }
