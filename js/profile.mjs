@@ -36,12 +36,9 @@ const profileContainer = document.querySelector(".profile");
 async function getProfile() {
   //get posts
   const response = await fetch(url, options);
-  console.log(response);
   const profiles = await response.json();
   const { name, avatar, posts } = profiles;
   const { followers, following } = profiles._count;
-  console.log(profiles);
-  console.log(posts);
 
   /**
    * This functions sort the posts, so that the newest posts are at the top of the profile feed, by sorting by post ID
@@ -53,9 +50,7 @@ async function getProfile() {
         return a.id - b.id;
       });
 
-      console.log(sortedById);
       const sortedPosts = sortedById.reverse();
-      console.log(sortedPosts);
     }
   }
 
@@ -99,7 +94,6 @@ async function getProfile() {
   for (let i = 0; i < posts.length; i++) {
     const post = posts[i];
     const { owner, title, body, media, id } = post;
-    console.log(post);
     postsContainer.innerHTML += `<div class="post my-3">
     
               <div class="author d-flex align-items-center justify-content-between my-2">
