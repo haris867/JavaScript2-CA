@@ -1,3 +1,5 @@
+import { hideDropdown } from "./hideDropdown.mjs";
+import { getToken } from "./utils/getToken.mjs";
 const queryString = document.location.search;
 const parameters = new URLSearchParams(queryString);
 const id = parameters.get("id");
@@ -8,16 +10,6 @@ const url =
 /**
  * Gets token from LocalStorage to use in other API requests
  */
-
-function getToken() {
-  const accessToken = localStorage.getItem("token");
-  if (accessToken === null) {
-    return [];
-    // window.location = "index.html";
-  } else {
-    return JSON.parse(accessToken);
-  }
-}
 
 const token = getToken();
 
@@ -33,9 +25,6 @@ const postContainer = document.querySelector(".post-container");
  * Retrieves the post you just clicked on, using query string which was added when you clicked the post. Using the ID in the query string, this function makes an API call to retrieve just this particaular post
  */
 async function getPost() {
-  // if (token !== getToken) {
-  //   window.location = "index.html";
-  // }
   //get posts
   const response = await fetch(url, options);
   const post = await response.json();
@@ -57,14 +46,15 @@ async function getPost() {
                           class="rounded-circle post-avatar"
                           src="${avatar}"
                           alt=""
+                          onerror="this.src='https://user-images.githubusercontent.com/73777398/196037714-5faabc3d-ce7f-427a-a6ec-b13ae9a76348.png';"
                         />
                       </div>
                       <div class="name ms-2 mt-1">
-                        <h3>${name}</h3>
+                        <h3 class="post-author-name">${name}</h3>
                       </div>
                     </div>
                     </a>
-                    <div class="dropdown" id="edit-dots">
+                    <div class="dropdown edit-dots" id="edit-dots">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -157,10 +147,12 @@ async function getPost() {
                   </div>
                 </div>
               </div>`;
+  hideDropdown();
 }
 
 await getPost();
 
+export { getPost };
 // function hideDropdown() {
 //   const dropdown = document.querySelector("#edit-dots");
 //   console.log(dropdown);

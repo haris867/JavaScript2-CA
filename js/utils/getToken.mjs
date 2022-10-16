@@ -1,4 +1,7 @@
-function getToken() {
+/**
+ * Gets token from LocalStorage to use in other API requests
+ */
+export function getToken() {
   const accessToken = localStorage.getItem("token");
   if (accessToken === null) {
     return [];
@@ -6,5 +9,3 @@ function getToken() {
     return JSON.parse(accessToken);
   }
 }
-
-const token = getToken();

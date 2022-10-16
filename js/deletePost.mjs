@@ -1,8 +1,11 @@
 import "./post.mjs";
+import { getToken } from "./utils/getToken.mjs";
 
-const queryStringName = document.location.search;
-const parameter = new URLSearchParams(queryStringName);
-const name = parameter.get("name");
+// const queryStringName = document.location.search;
+// const parameter = new URLSearchParams(queryStringName);
+// const name = parameter.get("name");
+
+const name = JSON.parse(localStorage.getItem("name"));
 
 // delete post
 
@@ -15,14 +18,6 @@ const url = "https://nf-api.onrender.com/api/v1/social/posts/" + id;
 /**
  * Gets token from LocalStorage to use in other API requests
  */
-function getToken() {
-  const accessToken = localStorage.getItem("token");
-  if (accessToken === null) {
-    return [];
-  } else {
-    return JSON.parse(accessToken);
-  }
-}
 
 const token = getToken();
 
@@ -40,8 +35,8 @@ deleteButton.addEventListener("click", deletePost);
 /**
  * Deletes this particular post
  */
-async function deletePost() {
+export async function deletePost() {
   const response = await fetch(url, options);
   const data = await response.json();
-  window.location = `profile.html?name="${name}"`;
+  window.location = `profile.html?name=${name}`;
 }

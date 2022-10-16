@@ -23,9 +23,6 @@
         <div class="animation a2">A</div>
         
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search icon icon-animation" viewBox="0 0 16 16">
-        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-      </svg>
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle icon icon-animation add-icon" data-bs-toggle="modal" data-bs-target="#postModal" data-bs-whatever="@mdo" viewBox="0 0 16 16">
         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
@@ -38,8 +35,8 @@
         </svg>
       </div>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item current" href="index.html">Home</a></li>
-          <li><a id="profile-button" class="dropdown-item" href="">Profile</a></li>
+          <li><a class="dropdown-item" href="index.html">Home</a></li>
+          <li><a id="profile-button" class="dropdown-item current" href="">Profile</a></li>
           <li><a class="dropdown-item signout-button" href="index.html">Sign out</a></li>
         </ul>
       </div>
@@ -76,23 +73,163 @@
 </div>
     <main>
       <div class="container-fluid">
-        <form class="d-flex mt-3 container-fluid-search" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-dark" type="submit">Search</button>
-          </form>
-          <div class="profile my-2">
-
-        </div>
+        <div class="profile">
+        <div class="card d-flex align-items-center my-4">
+              <div class="rounded-circle border border-dark mt-2 placeholder-glow">
+                <img class="rounded-circle post-avatar placeholder" src="" alt="">
+              </div>
+              <div class="name ms-2">
+                <h1 class="placeholder-glow">
+                 <span class="placeholder col-4 placeholder-name"></span>
+                </h1>
+              </div>
+              <div class="followers-tab d-flex my-3">
+                <div class="posts mx-3">
+                  <h5>Posts</h5>
+                  <p></p>
+                </div>
+                <div class="followers mx-3">
+                  <h5>Followers</h5>      
+                  <p></p>
+                </div>
+                <div class="following mx-3">
+                  <h5>Following</h5>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+      </div>
           <!-- Posts -->
           <div class="post-container">
+                        <div class="post my-3">
+                <div class="author d-flex align-items-center justify-content-between my-2">
+                <a href="profile.html?name=${name}" class="text-decoration-none">
+                  <div class="d-flex">
+                      <div class="rounded-circle placeholder-glow">
+                        <img
+                          class="rounded-circle post-avatar placeholder"
+                          src="..."
+                          alt=""
+                        />
+                      </div>
+                      <div class="name ms-2 mt-1">
+                        <h3 class="placeholder-glow">
+                        <span class="placeholder col-6 placeholder-name"></span>
+                        </h3>
+                      </div>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="card image-div">
+                  <!-- <img
+                    src="..."
+                    class="card-img-top placeholder row-6 col-5"
+                    alt=""
+                  /> -->
+                  <div class="placeholder-glow d-flex justify-content-center">
+                    <div class="placeholder placeholder-image col-6 m-3"></div>
+                  </div>
+                  <div class="card-body">
+                    <h3 class="placeholder-glow">
+                        <span class="placeholder col-4"></span>
+                    </h3>
+                    <p class="card-text placeholder-glow">
+                      <span class="placeholder col-6"></span>
+                      <span class="placeholder col-3"></span>
+                      <span class="placeholder col-5"></span>
+                      <span class="placeholder col-3"></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            <div class="post my-3">
+                <div class="author d-flex align-items-center justify-content-between my-2">
+                <a href="profile.html?name=${name}" class="text-decoration-none">
+                  <div class="d-flex">
+                      <div class="rounded-circle placeholder-glow">
+                        <img
+                          class="rounded-circle post-avatar placeholder"
+                          src="..."
+                          alt=""
+                        />
+                      </div>
+                      <div class="name ms-2 mt-1">
+                        <h3 class="placeholder-glow">
+                        <span class="placeholder col-6 placeholder-name"></span>
+                        </h3>
+                      </div>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="card image-div">
+                  <!-- <img
+                    src="..."
+                    class="card-img-top placeholder row-6 col-5"
+                    alt=""
+                  /> -->
+                  <div class="placeholder-glow d-flex justify-content-center">
+                    <div class="placeholder placeholder-image col-6 m-3"></div>
+                  </div>
+                  <div class="card-body">
+                    <h3 class="placeholder-glow">
+                        <span class="placeholder col-4"></span>
+                    </h3>
+                    <p class="card-text placeholder-glow">
+                      <span class="placeholder col-6"></span>
+                      <span class="placeholder col-3"></span>
+                      <span class="placeholder col-5"></span>
+                      <span class="placeholder col-3"></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            <div class="post my-3">
+                <div class="author d-flex align-items-center justify-content-between my-2">
+                <a href="profile.html?name=${name}" class="text-decoration-none">
+                  <div class="d-flex">
+                      <div class="rounded-circle placeholder-glow">
+                        <img
+                          class="rounded-circle post-avatar placeholder"
+                          src="..."
+                          alt=""
+                        />
+                      </div>
+                      <div class="name ms-2 mt-1">
+                        <h3 class="placeholder-glow">
+                        <span class="placeholder col-6 placeholder-name"></span>
+                        </h3>
+                      </div>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="card image-div">
+                  <!-- <img
+                    src="..."
+                    class="card-img-top placeholder row-6 col-5"
+                    alt=""
+                  /> -->
+                  <div class="placeholder-glow d-flex justify-content-center">
+                    <div class="placeholder placeholder-image col-6 m-3"></div>
+                  </div>
+                  <div class="card-body">
+                    <h3 class="placeholder-glow">
+                        <span class="placeholder col-4"></span>
+                    </h3>
+                    <p class="card-text placeholder-glow">
+                      <span class="placeholder col-6"></span>
+                      <span class="placeholder col-3"></span>
+                      <span class="placeholder col-5"></span>
+                      <span class="placeholder col-3"></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
           </div>
     </main>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/search.mjs" type="module"></script>
-    <script src="/js/profile.mjs" type="module"></script>
-    <script src="/js/logout.mjs" type="module"></script>
-    <script src="/js/createPost.mjs" type="module"></script>
-    <script src="/js/updatePost.mjs" type="module"></script>
-    <script src="/js/checkCredentials.mjs" type="module"></script>
+    <script src="/js/profilePage.mjs" type="module"></script>
   </body>
 </html>

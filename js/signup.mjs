@@ -3,6 +3,7 @@
 const url = "https://nf-api.onrender.com/api/v1/social/auth/register";
 
 const form = document.getElementById("form");
+const successMessage = document.querySelector(".success");
 
 // const usernameInput = document.querySelector("#username");
 // const emailInput = document.querySelector("#email");
@@ -23,12 +24,10 @@ async function registerProfile(event) {
     banner: banner.value,
   };
 
-  if (avatar === "") {
-    avatar =
-      "https://user-images.githubusercontent.com/73777398/195344626-79fbd38b-bd65-476a-a576-36f83fc1305d.png";
+  if (!avatar.value || avatar.value === "") {
+    delete data.avatar;
   }
-
-  if ((banner = "")) {
+  if (!banner.value || banner.value === "") {
     delete data.banner;
   }
 
@@ -41,5 +40,6 @@ async function registerProfile(event) {
   });
   console.log(register);
   form.reset();
+  successMessage.style.opacity = "1";
   window.location = "index.html";
 }

@@ -1,13 +1,5 @@
 import "./post.mjs";
-
-function getToken() {
-  const accessToken = localStorage.getItem("token");
-  if (accessToken === null) {
-    return [];
-  } else {
-    return JSON.parse(accessToken);
-  }
-}
+import { getToken } from "./utils/getToken.mjs";
 
 const token = getToken();
 
@@ -24,15 +16,22 @@ console.log(updateForm);
 
 updateForm.addEventListener("submit", updatePost);
 
-async function updatePost(event) {
+/**
+ * Updates post by making a put request with data from form inputs
+ */
+export async function updatePost(event) {
   event.preventDefault();
   console.log(title.value);
-  const updateData = JSON.stringify({
+  const updateData = {
     title: title.value,
     body: caption.value,
     tags: [],
     media: imageUrl.value,
-  });
+  };
+
+  if (!imageUrl.value || imageUrl.value === "") {
+    delete updateData.media;
+  }
 
   const response = await fetch(url, {
     method: "put",
@@ -40,7 +39,7 @@ async function updatePost(event) {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
-    body: updateData,
+    body: JSON.stringify(updateData),
   });
   console.log(response);
   const data = await response.json();

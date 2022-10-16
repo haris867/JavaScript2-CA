@@ -5,7 +5,7 @@ signoutButton.addEventListener("click", logOut);
 /**
  * Allows user to log out, which removes the token by clearing LocalStorage
  */
-function logOut() {
+export function logOut() {
   localStorage.removeItem("token");
   localStorage.removeItem("name");
   window.location = "index.html";

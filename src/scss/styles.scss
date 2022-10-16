@@ -3,6 +3,10 @@
 $black: #1b1c1e;
 $focus-color: $black;
 
+.testing {
+  color: red;
+}
+
 body {
   font-family: "Helvetica Neue";
   margin: 0;
@@ -93,7 +97,7 @@ header {
 
 .profile {
   max-width: 525px;
-  margin: 0 auto;
+  margin: 0 auto 70px auto;
 }
 
 .followers-tab p {
@@ -220,13 +224,6 @@ h4 {
   }
 }
 
-.display-search {
-  transition: 1s ease-in;
-  opacity: 1;
-  max-width: 525px;
-  margin: 0 auto;
-}
-
 .modal-backdrop.show {
   opacity: 0;
   z-index: -22;
@@ -237,12 +234,41 @@ h4 {
 }
 
 .placeholder {
-  min-width: 60px;
   &-image {
-    width: 500px;
-    height: 500px;
+    width: 95%;
+    height: 400px;
   }
   &-name {
-    min-width: 90px;
+    min-width: 150px;
   }
+}
+
+.display-search {
+  transition: 0.7s ease-in;
+  opacity: 1;
+  max-width: 525px;
+  margin: 0 auto;
+}
+
+.post-container {
+  translate: 0 -45px;
+  transition: 0.5s ease-in;
+  min-height: 50vh;
+}
+
+.post-page-container {
+  translate: 0;
+}
+
+.post-author-name {
+  color: black;
+}
+
+.search-initiated {
+  translate: 0 5px;
+  transition: 0.5s ease-in;
+}
+
+.success {
+  opacity: 0;
 }

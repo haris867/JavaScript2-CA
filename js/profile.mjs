@@ -1,3 +1,5 @@
+import { hideEmptyImages } from "./hideEmptyImages.mjs";
+import { getToken } from "./utils/getToken.mjs";
 const queryStringName = document.location.search;
 const parameters = new URLSearchParams(queryStringName);
 const name = parameters.get("name");
@@ -6,18 +8,6 @@ const url =
   "https://nf-api.onrender.com/api/v1/social/profiles/" +
   name +
   "?_posts=true&sortOrder=desc";
-
-/**
- * Gets token from LocalStorage to use in other API requests
- */
-function getToken() {
-  const accessToken = localStorage.getItem("token");
-  if (accessToken === null) {
-    return [];
-  } else {
-    return JSON.parse(accessToken);
-  }
-}
 
 const token = getToken();
 
@@ -33,7 +23,7 @@ const profileContainer = document.querySelector(".profile");
 /**
  * Retrieves posts made the person who owns this profile, using query string which was added when you clicked on the profile. This function uses the name in the query string in the URL which the API request is made to.
  */
-async function getProfile() {
+export async function getProfile() {
   //get posts
   const response = await fetch(url, options);
   const profiles = await response.json();
@@ -65,6 +55,7 @@ async function getProfile() {
                   class="rounded-circle post-avatar"
                   src="${avatar}"
                   alt=""
+                  onerror="this.src='https://user-images.githubusercontent.com/73777398/196037714-5faabc3d-ce7f-427a-a6ec-b13ae9a76348.png';"
                 />
               </div>
               <div class="name ms-2">
@@ -86,10 +77,7 @@ async function getProfile() {
               </div>
             </div>`;
 
-  if (!profiles.avatar) {
-    const postAvatar = document.querySelector(".post-avatar");
-    postAvatar.style.display = "none";
-  }
+  postsContainer.innerHTML = "";
 
   for (let i = 0; i < posts.length; i++) {
     const post = posts[i];
@@ -103,6 +91,7 @@ async function getProfile() {
                         class="rounded-circle post-avatar"
                         src="${avatar}"
                         alt=""
+                        onerror="this.src='https://user-images.githubusercontent.com/73777398/196037714-5faabc3d-ce7f-427a-a6ec-b13ae9a76348.png';"
                       />
                     </div>
                     <div class="name ms-2 mt-1">
@@ -117,7 +106,7 @@ async function getProfile() {
               <a href="post.html?id=${id}" class="text-decoration-none">
                 <img
                   src="${media}"
-                  class="card-img-top"
+                  class="card-img-top maybe-empty"
                   alt=""
                 />
                 <div class="card-body">
@@ -133,3 +122,4 @@ async function getProfile() {
 }
 
 await getProfile();
+await hideEmptyImages();

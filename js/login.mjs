@@ -3,6 +3,7 @@
 const url = "https://nf-api.onrender.com/api/v1/social/auth/login";
 
 const form = document.getElementById("form");
+const successMessage = document.querySelector(".success");
 /**
  * Checks if token is in LocalStorage, and if so, it sends you to the feed page
  */
@@ -41,5 +42,6 @@ async function login(event) {
   localStorage.setItem("token", JSON.stringify(accessToken));
   localStorage.setItem("name", JSON.stringify(name));
   form.reset();
+  successMessage.style.opacity = "1";
   window.location = `profile.html?name=${name}`;
 }
