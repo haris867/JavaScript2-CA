@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>OHANA | Sign up</title>
     <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="dist/css/styles.css" />
   </head>
   <body>
-    <header class="d-flex">
+    <header>
       <div class="letter-container d-flex">
-        <a href="home.html">
+        <a href="index.html">
           <div class="o">O</div>
         </a>
         <div class="animation h">H</div>
@@ -22,102 +22,75 @@
         <div class="animation n">N</div>
         <div class="animation a2">A</div>
       </div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        fill="currentColor"
-        class="bi bi-search icon icon-animation"
-        viewBox="0 0 16 16"
-      >
-        <path
-          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-        />
-      </svg>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        fill="currentColor"
-        class="bi bi-plus-circle icon icon-animation add-icon"
-        data-bs-toggle="modal"
-        data-bs-target="#postModal"
-        data-bs-whatever="@mdo"
-        viewBox="0 0 16 16"
-      >
-        <path
-          d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-        />
-        <path
-          d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
-        />
-      </svg>
-
-      <div class="dropdown icon icon-animation dropdown-icon">
-        <div
-          class="emdropdown-toggle dropdown-icon-button"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
-            fill="currentColor"
-            class="bi bi-three-dots-vertical"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"
-            />
-          </svg>
-        </div>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item current" href="index.html">Home</a></li>
-          <li><a class="dropdown-item" href="profile.html">Profile</a></li>
-          <li><a class="dropdown-item" href="login.html">Sign out</a></li>
-        </ul>
-      </div>
     </header>
     <main class="form-signin w-100 m-auto">
-      <form class="form" action="/profile">
-        <div class="form-floating">
-          <input
-            required
-            type="text"
-            class="form-control form-inputs"
-            id="floatingInput"
-            placeholder="Ola Nordmann"
-          />
-          <label class="form-label" for="floatingInput">Name</label>
+      <form class="form" id="form">
+        <div class="success d-flex justify-content-center">
+          <h5>You are now registered!</h5>
         </div>
         <div class="form-floating">
           <input
             required
+            pattern="^[\w]+$"
+            type="text"
+            class="form-control form-inputs"
+            id="username"
+            placeholder="Ola Nordmann"
+            title="Username must only contain lettes, numbers and underscore(_). Example: UserName_123"
+          />
+          <label class="form-label" for="username">Name</label>
+        </div>
+        <div class="form-floating">
+          <input
+            required
+            pattern="^[\w\-.]+@(stud.)?noroff.no$"
             type="email"
             class="form-control form-inputs"
-            id="floatingInput"
+            id="email"
             placeholder="name@example.com"
+            title="Only @(stud.)noroff.no domains are allowed to register a user profile"
           />
-          <label class="form-label" for="floatingInput">Email address</label>
+          <label class="form-label" for="email">Email address</label>
         </div>
         <div class="form-floating">
           <input
             required
             type="password"
             class="form-control form-inputs"
-            id="floatingPassword"
+            id="password"
             placeholder="Password"
+            minlength="8"
           />
-          <label for="floatingPassword">Password</label>
+          <label for="password">Password</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control form-inputs"
+            id="avatar"
+            placeholder="Avatar"
+          />
+          <label for="avatar">Avatar (optional)</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control form-inputs"
+            id="banner"
+            placeholder="Banner"
+          />
+          <label for="banner">Banner (optional)</label>
         </div>
 
         <button class="w-100 btn btn-lg btn-primary form-button" type="submit">
           Sign up
         </button>
+        <div class="register-link d-flex justify-content-center">
+          <a href="index.html">Already registered? Log in here!</a>
+        </div>
       </form>
     </main>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/signup.mjs" type="module"></script>
   </body>
 </html>

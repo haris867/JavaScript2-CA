@@ -4,16 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>OHANA | Log in</title>
     <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
-
-    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <link rel="stylesheet" href="dist/css/styles.css" />
   </head>
   <body>
-    <header class="d-flex">
+    <header>
       <div class="letter-container d-flex">
         <a href="index.html">
           <div class="o">O</div>
@@ -23,48 +22,41 @@
         <div class="animation n">N</div>
         <div class="animation a2">A</div>
       </div>
-      <a href="login.html">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-person-circle login-icon"
-          viewBox="0 0 16 16"
-        >
-          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-          <path
-            fill-rule="evenodd"
-            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
-          />
-        </svg>
-      </a>
     </header>
     <main class="form-signin w-100 m-auto">
-      <form>
-        <h1 class="h3 mb-3 fw-normal">Sign in</h1>
-
-        <div class="form-floating my-2">
+      <form class="form" id="form">
+        <div class="success d-flex justify-content-center">
+          <h5>You are now logging in!</h5>
+        </div>
+        <div class="form-floating">
           <input
+            required
             type="email"
-            class="form-control"
-            id="floatingInput"
+            class="form-control form-inputs"
+            id="email"
             placeholder="name@example.com"
           />
-          <label for="floatingInput">Email address</label>
+          <label class="form-label" for="floatingInput">Email address</label>
         </div>
-        <div class="form-floating my-2">
+        <div class="form-floating">
           <input
+            required
             type="password"
-            class="form-control"
-            id="floatingPassword"
+            class="form-control form-inputs"
+            id="password"
             placeholder="Password"
           />
           <label for="floatingPassword">Password</label>
         </div>
-
-        <button class="w-100 btn btn-lg btn-dark" type="submit">Sign in</button>
+        <button class="w-100 btn btn-lg btn-primary form-button" type="submit">
+          Sign in
+        </button>
+        <div class="register-link d-flex justify-content-center">
+          <a href="signup.html">Not registered? Sign up now!</a>
+        </div>
       </form>
     </main>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/login.mjs" type="module"></script>
   </body>
 </html>

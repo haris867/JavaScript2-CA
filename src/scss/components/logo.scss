@@ -1,3 +1,6 @@
+$black: #1b1c1e;
+$focus-color: $black;
+
 .letter-container {
   color: white;
   margin-left: 10px;
@@ -5,7 +8,7 @@
   max-height: 145px;
 }
 
-a {
+header a {
   text-decoration: none;
   color: white;
 }

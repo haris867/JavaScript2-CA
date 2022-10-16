@@ -3,6 +3,10 @@
 $black: #1b1c1e;
 $focus-color: $black;
 
+.testing {
+  color: red;
+}
+
 body {
   font-family: "Helvetica Neue";
   margin: 0;
@@ -14,6 +18,10 @@ header {
   font-weight: 100;
   max-height: 145px;
 }
+
+// .feed-header {
+//   margin-bottom: 100px;
+// }
 
 .current {
   font-weight: bold;
@@ -55,6 +63,14 @@ header {
   height: 180px;
 }
 
+.author a {
+  color: $black;
+}
+
+.author:hover {
+  text-decoration: underline;
+}
+
 .author img {
   width: 30px;
   height: 30px;
@@ -81,7 +97,7 @@ header {
 
 .profile {
   max-width: 525px;
-  margin: 0 auto;
+  margin: 0 auto 70px auto;
 }
 
 .followers-tab p {
@@ -166,6 +182,25 @@ h4 {
   font-weight: bold;
 }
 
+.post .card:hover {
+  animation-name: post-hover;
+  animation-delay: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes post-hover {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 @keyframes menu-appear {
   0% {
     opacity: 0%;
@@ -182,19 +217,58 @@ h4 {
 // }
 
 .container-fluid {
-  translate: 0 -2.5%;
+  // position: absolute;
+  top: 120px;
   &-search {
     opacity: 0;
   }
 }
 
-.display-search {
-  translate: 0 0;
-  opacity: 1;
-  max-width: 550px;
-}
-
 .modal-backdrop.show {
   opacity: 0;
   z-index: -22;
+}
+
+.card-body {
+  color: $black;
+}
+
+.placeholder {
+  &-image {
+    width: 95%;
+    height: 400px;
+  }
+  &-name {
+    min-width: 150px;
+  }
+}
+
+.display-search {
+  transition: 0.7s ease-in;
+  opacity: 1;
+  max-width: 525px;
+  margin: 0 auto;
+}
+
+.post-container {
+  translate: 0 -45px;
+  transition: 0.5s ease-in;
+  min-height: 50vh;
+}
+
+.post-page-container {
+  translate: 0;
+}
+
+.post-author-name {
+  color: black;
+}
+
+.search-initiated {
+  translate: 0 5px;
+  transition: 0.5s ease-in;
+}
+
+.success {
+  opacity: 0;
 }
